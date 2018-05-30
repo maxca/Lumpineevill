@@ -65,31 +65,31 @@ class GenerateFile implements GenfileInterface
     protected $configPath = [
 
         'Controller' => [
-            'resource' => 'Template/Controller.php',
+            'resource' => 'TemplateBackoffice/Controller.php',
             'target' => 'app/Http/Controllers/',
         ],
         'Request' => [
-            'resource' => 'Template/Request.php',
+            'resource' => 'TemplateBackoffice/Request.php',
             'target' => 'app/Http/Requests/',
         ],
         'Model' => [
-            'resource' => 'Template/Model.php',
+            'resource' => 'TemplateBackoffice/Model.php',
             'target' => 'app/Models/',
         ],
         'Repository' => [
-            'resource' => 'Template/Repository.php',
+            'resource' => 'TemplateBackoffice/Repository.php',
             'target' => 'app/Repository/',
         ],
         'Interfaces' => [
-            'resource' => 'Template/Interface.php',
+            'resource' => 'TemplateBackoffice/Interface.php',
             'target' => 'app/Repository/',
         ],
         'Route' => [
-            'resource' => 'Template/Route.php',
+            'resource' => 'TemplateBackoffice/Route.php',
             'target' => 'app/Http/Routes/Backend/',
         ],
         'Config' => [
-            'resource' => 'Template/Config.php',
+            'resource' => 'TemplateBackoffice/Config.php',
             'target' => 'config/',
         ],
     ];
