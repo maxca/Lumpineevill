@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 namespace Lumpineevill\Libraries;
 
 class Benchmark

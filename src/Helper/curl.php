@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 use Illuminate\Support\Facades\Log;
 
 if (!function_exists('curlGet')) {

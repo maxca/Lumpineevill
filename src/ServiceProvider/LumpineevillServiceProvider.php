@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 namespace Lumpineevill\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
@@ -38,6 +41,7 @@ class LumpineevillServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        # add routing
         require __DIR__ . '/../Http/Routing.php';
 
         # add commnads
