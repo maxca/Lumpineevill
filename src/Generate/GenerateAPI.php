@@ -5,6 +5,8 @@
  */
 namespace Lumpineevill\Generate;
 
+use Illuminate\Support\Facades\Artisan;
+
 class GenerateAPI extends GenerateFile
 {
     /**
@@ -57,8 +59,8 @@ class GenerateAPI extends GenerateFile
         'create' => true,
         'update' => true,
         'delete' => true,
-        'detail' => true,
-        'getUpdate' => true,
+        'detail' => false,
+        'get' => true,
     ];
 
     /**
@@ -68,5 +70,18 @@ class GenerateAPI extends GenerateFile
     public function __construct($namespace = '')
     {
         parent::__construct($namespace);
+    }
+
+    /**
+     * [makeMigration description]
+     * @return [type] [description]
+     */
+    public function makeMigration()
+    {
+        $tableName = $this->replaceSmall;
+        $exitCode = Artisan::call('make:migration', [
+            'create_table_' . $tableName => true,
+            'create' => $tableName,
+        ]);
     }
 }
