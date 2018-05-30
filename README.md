@@ -1,4 +1,4 @@
-# Lumpineevill v.1.0.4.*
+# Lumpineevill v.1.0.6.*
 For repository patten design under Laravel framework,
 # Feature 
 - can install via composer 
@@ -14,6 +14,7 @@ For repository patten design under Laravel framework,
 - can generate route and mapping auto to controller
 - can generate repository extended on APIBaseRepository
 	- generate automatically interfaces of repository
+- can generate migration file
 # Installation 
 - composer require samark/lumpineevill 
 # Laravel 5.*: Serviceprovider
