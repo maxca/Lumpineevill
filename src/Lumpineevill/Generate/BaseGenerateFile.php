@@ -2,6 +2,10 @@
 
 namespace Lumpineevill\Generate;
 
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 class BaseGenerateFile
 {
     /**
@@ -59,13 +63,14 @@ class BaseGenerateFile
             return $respones;
         }
     }
+
     /**
      * [connectDatabase description]
      * @return [type] [description]
      */
     protected function connectDatabase()
     {
-        $this->connect = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
+        $this->connect = new \mysqli($this->host, $this->user, $this->pass, $this->dbname);
         if ($this->connect->connect_error) {
             die('mysqli connect error');
         }

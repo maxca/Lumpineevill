@@ -51,6 +51,7 @@ class GenFileCommand extends Command
         $this->generate = app(GenerateAPI::class, ['namespace' => $namespace]);
         $this->generate->setPath(base_path());
         $this->generate->excute();
+        $this->line('generate module ' . $namespace . ' success !');
 
     }
 }

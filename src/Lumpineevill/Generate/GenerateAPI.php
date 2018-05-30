@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 namespace Lumpineevill\Generate;
 
 class GenerateAPI extends GenerateFile

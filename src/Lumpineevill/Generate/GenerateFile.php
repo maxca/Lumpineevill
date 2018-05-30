@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 namespace Lumpineevill\Generate;
 
 use Exception;
@@ -164,10 +168,10 @@ class GenerateFile implements GenfileInterface
     }
 
     /**
-     * [setFilname description]
+     * [setFilename description]
      * @param string $filename [description]
      */
-    public function setFilname($filename = '')
+    public function setFilename($filename = '')
     {
         $this->filename = $filename;
     }
