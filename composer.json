@@ -16,7 +16,7 @@
     },
    "autoload": {
         "classmap": [
-          "src/Lumpineevill/"
+          "src/"
         ],
         "psr-0": {
           "Samark\\Lumpineevill\\": "src/"
