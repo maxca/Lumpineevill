@@ -36,6 +36,18 @@ class {replace}Repository extends BaseRepository implements {replace}Interface
      */
     protected $classModel = {replace}Model::class;
 
+    /**
+     * set search column like
+     * @var array
+     */
+    protected $searchColumnLike = [];
+
+    /**
+     * set serach column date
+     * @var array
+     */
+    protected $searchColumnDate = [];
+
     public function __construct()
     {
         parent::__construct();
