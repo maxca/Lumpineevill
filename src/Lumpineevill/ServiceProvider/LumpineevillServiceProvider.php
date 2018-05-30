@@ -4,6 +4,7 @@ namespace Lumpineevill\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
 use Lumpineevill\Command\ExampleCommand;
+use Lumpineevill\Command\GenFileCommand;
 
 class LumpineevillServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,7 @@ class LumpineevillServiceProvider extends ServiceProvider
      */
     protected $commands = [
         ExampleCommand::class,
+        GenFileCommand::class,
     ];
 
     /**

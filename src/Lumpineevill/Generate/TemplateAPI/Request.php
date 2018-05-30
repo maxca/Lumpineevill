@@ -1,9 +1,13 @@
 <?php
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 namespace App\Http\Requests\{replace};
 
-use App\Http\Requests\Request;
+use Lumpineevill\Request\APIRequest;
 
-class {replace}UpdateRequest extends Request
+class {action}{replace}Request extends APIRequest
 {
 
     /**

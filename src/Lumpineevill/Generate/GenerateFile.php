@@ -272,7 +272,7 @@ class GenerateFile implements GenfileInterface
     protected function readAndReplaceFile($config)
     {
         if (file_exists((__DIR__ . '/' . $config))) {
-            $file = file_get_contents($config);
+            $file = file_get_contents(__DIR__ . '/' . $config);
             return $this->replaceFile($file);
         }
         throw new \Exception("Can't read file :" . $config);

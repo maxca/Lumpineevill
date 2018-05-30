@@ -1,8 +1,12 @@
 <?php 
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 namespace App\Repository\{replace};
 
 use App\Models\{replace}\{replace};
-use App\Repository\BaseRepository;
+use lumpineevill\BaseRepository;
 use App\Repository\{replace}\{replace}Interface;
 use App\Models\{replace}\{replace}Model;
 
@@ -26,19 +30,15 @@ class {replace}Repository extends BaseRepository implements {replace}Interface
      */
     protected $sortType = 'desc';    
 
+    /**
+     * set model 
+     * @var class
+     */
+    protected $classModel = {replace}Model::class;
+
     public function __construct()
     {
         parent::__construct();
-        $this->model = $this->models();
-    }
-    /**
-     * Specify Model class name
-     *
-     * @return string
-     */
-    public function models()
-    {
-        return app({replace}Model::class);
     }
     
     /**
@@ -50,7 +50,8 @@ class {replace}Repository extends BaseRepository implements {replace}Interface
     {
         return $this->model->find($id);
     }
-   
+
+
 
 
 }

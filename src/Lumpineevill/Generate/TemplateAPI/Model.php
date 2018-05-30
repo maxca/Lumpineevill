@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 namespace App\Models\{replace};
 
 use Illuminate\Database\Eloquent\Model;
