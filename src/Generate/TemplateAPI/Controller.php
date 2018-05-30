@@ -21,7 +21,10 @@ class {replace}Controller extends Controller
      */
     protected ${replace_sm};
 
-
+    /**
+     * [__construct description]
+     * @param {replace}Repository ${replace_sm} [description]
+     */
     public function __construct({replace}Repository ${replace_sm})
     {
         $this->{replace_sm} = ${replace_sm};
