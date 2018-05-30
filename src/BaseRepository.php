@@ -198,7 +198,7 @@ class BaseRepository implements BaseRepositoryInterface
             ],
 
             'data' => [
-                'item' => $data,
+                $data,
             ],
             'meta' => [
                 'total' => $this->total,
