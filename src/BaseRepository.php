@@ -5,8 +5,8 @@
  */
 namespace Lumpineevill;
 
-use BaseRepositoryInterface;
 use Illuminate\Support\Facades\Request;
+use Lumpineevill\Contract\BaseRepositoryInterface;
 use Lumpineevill\Libraries\Benchmark;
 
 class BaseRepository implements BaseRepositoryInterface
