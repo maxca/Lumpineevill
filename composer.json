@@ -1,6 +1,6 @@
 {
     "name": "samark/lumpineevill",
-    "description": "For api base CRUD , Management request , handler response with JSON Repsonse.",
+    "description": "Laravel Generator , For api base CRUD , Management request , handler response with JSON.",
     "type": "library",
     "license": "MIT",
     "authors": [
