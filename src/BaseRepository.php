@@ -208,7 +208,7 @@ class BaseRepository implements BaseRepositoryInterface
         ];
 
         $this->benchmark->mark('end');
-        $responseTime = $this->benchmark->elapsed_time('start', 'end');
+        $responseTime = $this->benchmark->elapsedTime('start', 'end');
         $responseReturn['process_time'] = $responseTime;
         $response['process_time'] = $responseTime;
         return $response;
