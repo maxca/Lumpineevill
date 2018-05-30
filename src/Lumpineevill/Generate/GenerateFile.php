@@ -266,8 +266,20 @@ class GenerateFile implements GenfileInterface
         }
         $filename = $path . '/' . $filename;
         file_put_contents($filename, $newFile);
+        $this->printline($filename);
     }
 
+    /**
+     * [printline description]
+     * @param  string $text [description]
+     * @return [type]       [description]
+     */
+    protected function printline($text = '')
+    {
+        echo "\r\n";
+        echo "write file " . $text . "success";
+        echo "\r\n";
+    }
     /**
      * [readAndReplaceFile description]
      * @param  [type] $config [description]
