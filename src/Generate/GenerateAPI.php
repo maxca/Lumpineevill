@@ -84,5 +84,6 @@ class GenerateAPI extends GenerateFile
             'name' => $call,
             '--create' => $tableName,
         ]);
+        parent::printline('ok');
     }
 }
