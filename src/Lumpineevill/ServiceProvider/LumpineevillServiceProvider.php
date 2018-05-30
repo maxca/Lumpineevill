@@ -2,6 +2,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
+namespace Lumpineevill\ServiceProvider;
+
 class LumpineevillServiceProvider extends ServiceProvider
 {
 
