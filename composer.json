@@ -22,7 +22,7 @@
           "Samark\\Lumpineevill\\": "src/"
         },
          "files": [
-            "src/Helper/helpers.php"
+            "src/Helper/helper.php"
         ]
   }
 }
