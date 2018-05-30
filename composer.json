@@ -20,6 +20,9 @@
         ],
         "psr-0": {
           "Samark\\Lumpineevill\\": "src/"
-        }
+        },
+         "files": [
+            "src/Helper/helpers.php"
+        ]
   }
 }
