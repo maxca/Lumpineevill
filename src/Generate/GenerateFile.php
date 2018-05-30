@@ -231,6 +231,8 @@ class GenerateFile implements GenfileInterface
                 $this->processReadWriteFile($filename, $list);
             }
         }
+        # append route
+        $this->appendRoute();
     }
 
     /**
@@ -264,8 +266,8 @@ class GenerateFile implements GenfileInterface
         if (!is_dir($path)) {
             mkdir($path, 0777, true);
         }
-        $filename = $path . '/' . $filename;
-        file_put_contents($filename, $newFile);
+        $fullPath = $path . '/' . $filename;
+        file_put_contents($fullPath, $newFile);
         $this->printline($filename);
     }
 
@@ -280,6 +282,7 @@ class GenerateFile implements GenfileInterface
         echo "write file " . $text . " success";
         echo "\r\n";
     }
+
     /**
      * [readAndReplaceFile description]
      * @param  [type] $config [description]
@@ -307,5 +310,19 @@ class GenerateFile implements GenfileInterface
         $file = str_replace(["{replace_snc}"], $this->replaceSnake, $file);
         $file = str_replace(["{action}"], $this->action, $file);
         return $file;
+    }
+
+    /**
+     * [appendRoute description]
+     * @param  [type] $path [description]
+     * @return [type]       [description]
+     */
+    public function appendRoute($path)
+    {
+        if (file_exists(base_path('route/api.php'))) {
+            $data = "\r\n";
+            $data .= "require (__DIR__ . /Routes/'.$this->replace.'/'.$this->replace.'Route.php')";
+            file_put_contents(base_path('route/api.php'), $data . "\r\n", FILE_APPEND);
+        }
     }
 }
