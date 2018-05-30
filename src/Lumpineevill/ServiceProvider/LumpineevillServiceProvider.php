@@ -18,7 +18,6 @@ class LumpineevillServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/Config/Form.php', 'formsimple'
         );
-
     }
 
     /**
