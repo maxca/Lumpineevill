@@ -20,3 +20,5 @@ For repository patten design under Laravel framework,
 If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
 - Lumpineevill\ServiceProvider\LumpineevillServiceProvider::class
 
+# Command
+- php artisan samark:genfile 
