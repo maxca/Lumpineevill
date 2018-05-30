@@ -10,8 +10,8 @@ Route::group([
     'as' => '{replace_sm}.',
     'middleware' => ['api'],
 ], function () {
-    Route::post('create', 'create{replace}({replace}CreateRequest')->name('create');
-    Route::put('update', 'update{replace}({replace}UpdateRequest')->name('update');
-    Route::delete('delete', 'delete{replace}({replace}DeleteRequest')->name('delete');
-    Route::get('list', 'get{replace}List({replace}GetRequest')->name('list');
+    Route::post('create', '{replace}Controller@create{replace}')->name('create');
+    Route::put('update', '{replace}Controller@update{replace}')->name('update');
+    Route::delete('delete', '{replace}Controller@delete{replace}')->name('delete');
+    Route::get('list', '{replace}Controller@get{replace}List')->name('list');
 });

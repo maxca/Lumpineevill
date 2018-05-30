@@ -6,8 +6,7 @@
 namespace App\Repository\{replace};
 
 use App\Models\{replace}\{replace};
-use lumpineevill\BaseRepository;
-use App\Repository\{replace}\{replace}Interface;
+use Lumpineevill\BaseRepository;
 use App\Models\{replace}\{replace}Model;
 
 class {replace}Repository extends BaseRepository implements {replace}Interface
