@@ -3,9 +3,17 @@
 namespace Lumpineevill\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
+use Lumpineevill\Command\ExampleCommand;
 
 class LumpineevillServiceProvider extends ServiceProvider
 {
+    /**
+     * set command list
+     * @var array
+     */
+    protected $commands = [
+        ExampleCommand::class,
+    ];
 
     /**
      * register servicde
@@ -14,11 +22,11 @@ class LumpineevillServiceProvider extends ServiceProvider
     public function register()
     {
         $this->publishes([
-            __DIR__ . '/Config/Form.php' => config_path('Form.php'),
+            __DIR__ . '/../Config/Form.php' => config_path('Form.php'),
         ]);
 
         $this->mergeConfigFrom(
-            __DIR__ . '/Config/Form.php', 'formsimple'
+            __DIR__ . '/../Config/Form.php', 'formsimple'
         );
     }
 
@@ -28,7 +36,10 @@ class LumpineevillServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        require __DIR__ . '/Http/Routing.php';
+        require __DIR__ . '/../Http/Routing.php';
+
+        # add commnads
+        $this->commands($this->commands);
     }
 
     /**
