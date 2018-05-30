@@ -31,7 +31,7 @@ class GenerateAPI extends GenerateFile
             'resource' => 'TemplateAPI/Repository.php',
             'target' => 'app/Repository/',
         ],
-        'Interfaces' => [
+        'Interface' => [
             'resource' => 'TemplateAPI/Interface.php',
             'target' => 'app/Repository/',
         ],
@@ -79,9 +79,10 @@ class GenerateAPI extends GenerateFile
     public function makeMigration()
     {
         $tableName = $this->replaceSmall;
+        $call = 'create_table_' . $tableName;
         $exitCode = Artisan::call('make:migration', [
-            'create_table_' . $tableName => true,
-            'create' => $tableName,
+            'name' => $call,
+            '--create' => $tableName,
         ]);
     }
 }
