@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\ServiceProvider;
-
 namespace Lumpineevill\ServiceProvider;
+
+use Illuminate\Support\ServiceProvider;
 
 class LumpineevillServiceProvider extends ServiceProvider
 {

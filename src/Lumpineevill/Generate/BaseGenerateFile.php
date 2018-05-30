@@ -52,9 +52,9 @@ class BaseGenerateFile
 					    AND `TABLE_NAME`='{$table}';";
         $data = $this->connect->query($sql);
         if ($data->nun_rows > 0) {
-        	$respones = [];
+            $respones = [];
             while ($row = $data->fetch_assoc()) {
-            	$respones[] = $row['COLUMNS']
+                $respones[] = $row['COLUMNS'];
             }
             return $respones;
         }

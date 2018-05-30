@@ -1,7 +1,7 @@
 <?php
 namespace Lumpineevill\Generate;
 
-class GenerateAPI implements GenfileInterface
+class GenerateAPI extends GenerateFile
 {
     /**
      * set config path
