@@ -7,6 +7,7 @@ namespace Lumpineevill\Request;
 
 use Exception;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Response;
 
 abstract class APIRequest extends FormRequest
 {
@@ -32,7 +33,7 @@ abstract class APIRequest extends FormRequest
         $request = $this->all();
         $responseReturn = array_merge($response, $request);
         $responseReturn['data'] = $errors;
-        return repsonse()->json($responseReturn, 400);
+        return Response::json($responseReturn, 400);
     }
     /**
      * [validationData description]
