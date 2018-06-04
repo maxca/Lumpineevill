@@ -107,6 +107,7 @@ class GenerateFront extends GenerateFile
             $data .= "require (app_path(). '/Http/Routes/Web/{$this->replace}/{$this->replace}Route.php');";
             file_put_contents(base_path('routes/web.php'), $data . "\r\n", FILE_APPEND);
         }
+        $this->writeViewBlade();
     }
     /**
      * [writeViewBlade description]

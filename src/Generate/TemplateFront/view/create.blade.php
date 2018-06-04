@@ -10,7 +10,7 @@
  			{{ $errors->first() }}
  		</span>
  		@endif
- 		 {!! Form::open(['route' => '{replace_snc}.post.create','class' => 'form form-control']) !!}
+ 		 {!! Form::open(['url' => '/{replace_ur}/create','class' => 'form form-control']) !!}
  		 <div class="input-block">
  		 	<span class="input-text">
  		 		<i class="fa fa-upload"></i> please insert  id

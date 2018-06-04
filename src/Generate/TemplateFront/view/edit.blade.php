@@ -9,7 +9,7 @@
  			{{ $errors->first() }}
  		</span>
  		@endif
- 		 {!! Form::open(['route' => '{replace_snc}.post.update','class' => 'form form-control']) !!}
+ 		 {!! Form::open(['url' => '/{replace_url}/update','class' => 'form form-control' ,'method' => 'post']) !!}
  		 <div class="input-block">
  		 	<span class="input-text">
  		 		<i class="fa fa-upload"></i> please insert product id

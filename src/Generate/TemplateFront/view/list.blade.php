@@ -6,11 +6,11 @@
 <div class="row">
  	<div class="col-md-6">
 	 @foreach ($data['item'] as $key => $item)
-	 	<a class="btn btn-primary" href="{{route('{replace_snc}.create')}}"> create</a>
-	 	<a class="btn btn-primary" href="{{route('{replace_snc}.edit',['id' => $item->id])}}"> edit</a>
-	 	<a class="btn btn-primary" href="{{route('{replace_snc}.detail',['id' => $item->id])}}"> detail</a>
+	 	<a class="btn btn-primary" href="{{url('/{replace_url}/create')}}"> create</a>
+	 	<a class="btn btn-primary" href="{{url('/{replace_url}/edit',['id' => $item->id])}}"> edit</a>
+	 	<a class="btn btn-primary" href="{{url('/{replace_url}/detail',['id' => $item->id])}}"> detail</a>
 	 	<a class="btn btn-primary" href="#" onclick="document.getElementById('delete-product-recently-{{$item->id}}').submit();"> delete</a>
-	 	{{Form::open(['route' => '{replace_snc}.post.delete','style' =>'display:none;','id' => '{replace_snc}-'.$item->id])}}
+	 	{{Form::open(['url' => '/{replace_url}/delete','style' =>'display:none;','id' => '{replace_url}-'.$item->id])}}
 	 	{{Form::text('id',$item->id)}}
 	 	{{Form::close()}}
 	 	{{dump($item)}}
