@@ -4,26 +4,26 @@ namespace Lumpineevill\Command;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
-use Lumpineevill\Generate\GenerateAPI;
+use Lumpineevill\Generate\GenerateFront;
 
-class GenFileCommand extends Command
+class GenFrontCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'samark:genfile';
+    protected $signature = 'samark:genfront';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Generate file';
+    protected $description = 'Generate Front Resource file.';
 
     /**
-     * winner list
+     * generate list
      * @var collection
      */
     protected $generate;
@@ -36,7 +36,6 @@ class GenFileCommand extends Command
     public function __construct()
     {
         parent::__construct();
-
         Log::info('start process ' . get_class());
     }
 
@@ -48,11 +47,9 @@ class GenFileCommand extends Command
     public function handle()
     {
         $namespace = $this->ask('What is your namespace ?');
-        $this->generate = app(GenerateAPI::class, ['namespace' => $namespace]);
+        $this->generate = app(GenerateFront::class, ['namespace' => $namespace]);
         $this->generate->setPath(base_path());
         $this->generate->excute();
-        $this->generate->makeMigration();
         $this->line('generate module ' . $namespace . ' success !');
-
     }
 }

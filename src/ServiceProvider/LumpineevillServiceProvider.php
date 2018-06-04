@@ -6,7 +6,8 @@
 namespace Lumpineevill\ServiceProvider;
 
 use Illuminate\Support\ServiceProvider;
-use Lumpineevill\Command\GenFileCommand;
+use Lumpineevill\Command\GenAPICommand;
+use Lumpineevill\Command\GenFrontCommand;
 
 class LumpineevillServiceProvider extends ServiceProvider
 {
@@ -15,7 +16,8 @@ class LumpineevillServiceProvider extends ServiceProvider
      * @var array
      */
     protected $commands = [
-        GenFileCommand::class,
+        GenAPICommand::class,
+        GenFrontCommand::class,
     ];
 
     /**

@@ -312,18 +312,4 @@ class GenerateFile implements GenfileInterface
         return $file;
     }
 
-    /**
-     * [appendRoute description]
-     * @param  [type] $path [description]
-     * @return [type]       [description]
-     */
-    public function appendRoute()
-    {
-        if (file_exists(base_path('routes/api.php'))) {
-            $data = "\r\n";
-            $data .= "# {$this->replace} \r\n";
-            $data .= "require (app_path(). '/Http/Routes/API/{$this->replace}/{$this->replace}Route.php');";
-            file_put_contents(base_path('routes/api.php'), $data . "\r\n", FILE_APPEND);
-        }
-    }
 }

@@ -5,41 +5,45 @@
  */
 namespace Lumpineevill\Generate;
 
-use Illuminate\Support\Facades\Artisan;
-
-class GenerateAPI extends GenerateFile
+class GenerateFront extends GenerateFile
 {
     /**
      * set config path
      * @var array
      */
     protected $configPath = [
-
         'Controller' => [
-            'resource' => 'TemplateAPI/Controller.php',
+            'resource' => 'TemplateFront/Controller.php',
             'target' => 'app/Http/Controllers/',
         ],
         'Request' => [
-            'resource' => 'TemplateAPI/Request.php',
+            'resource' => 'TemplateFront/Request.php',
+            'target' => 'app/Http/Requests/',
+        ],
+        'PostRequest' => [
+            'resource' => 'TemplateFront/PostRequest.php',
+            'target' => 'app/Http/Requests/',
+        ],
+        'AjaxRequest' => [
+            'resource' => 'TemplateFront/AjaxRequest.php',
             'target' => 'app/Http/Requests/',
         ],
         'Model' => [
-            'resource' => 'TemplateAPI/Model.php',
+            'resource' => 'TemplateFront/Model.php',
             'target' => 'app/Models/',
         ],
         'Repository' => [
-            'resource' => 'TemplateAPI/Repository.php',
+            'resource' => 'TemplateFront/Repository.php',
             'target' => 'app/Repository/',
         ],
         'Interface' => [
-            'resource' => 'TemplateAPI/Interface.php',
+            'resource' => 'TemplateFront/Interface.php',
             'target' => 'app/Repository/',
         ],
         'Route' => [
-            'resource' => 'TemplateAPI/Route.php',
+            'resource' => 'TemplateFront/Route.php',
             'target' => 'app/Http/Routes/API/',
         ],
-
     ];
 
     /**
@@ -48,6 +52,8 @@ class GenerateAPI extends GenerateFile
      */
     protected $needDuplicate = [
         'Request' => 'requestType',
+        'PostRequest' => 'postType',
+        'AjaxRequest' => 'ajaxType',
         'Config' => 'configType',
     ];
 
@@ -64,6 +70,26 @@ class GenerateAPI extends GenerateFile
     ];
 
     /**
+     * set request type
+     * @var array
+     */
+    protected $ajaxType = [
+        'create' => true,
+        'update' => true,
+        'delete' => true,
+    ];
+
+    /**
+     * set post type
+     * @var array
+     */
+    protected $postType = [
+        'create' => true,
+        'update' => true,
+        'delete' => true,
+    ];
+
+    /**
      * [__construct description]
      * @param string $namespace [description]
      */
@@ -73,33 +99,17 @@ class GenerateAPI extends GenerateFile
     }
 
     /**
-     * [makeMigration description]
-     * @return [type] [description]
-     */
-    public function makeMigration()
-    {
-        $tableName = $this->replaceSmall;
-        $call = 'create_table_' . $tableName;
-        $exitCode = Artisan::call('make:migration', [
-            'name' => $call,
-            '--create' => $tableName,
-        ]);
-        parent::printline('ok');
-    }
-
-    /**
      * [appendRoute description]
      * @param  [type] $path [description]
      * @return [type]       [description]
      */
     public function appendRoute()
     {
-        if (file_exists(base_path('routes/api.php'))) {
+        if (file_exists(base_path('routes/web.php'))) {
             $data = "\r\n";
             $data .= "# {$this->replace} \r\n";
             $data .= "require (app_path(). '/Http/Routes/API/{$this->replace}/{$this->replace}Route.php');";
-            file_put_contents(base_path('routes/api.php'), $data . "\r\n", FILE_APPEND);
+            file_put_contents(base_path('routes/web.php'), $data . "\r\n", FILE_APPEND);
         }
     }
-
 }
