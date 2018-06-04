@@ -115,7 +115,7 @@ class GenerateFront extends GenerateFile
      */
     public function writeViewBlade()
     {
-        $dir = __DIR__ . '../TemplateFront/view/';
+        $dir = __DIR__ . '/TemplateFront/view/';
         foreach (scandir($dir) as $key => $value) {
             if (!in_array($value, ['..', '.'])) {
                 $read = file_get_contents($dir . $value);
