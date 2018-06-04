@@ -28,10 +28,14 @@ class LumpineevillServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../Config/Form.php' => config_path('Form.php'),
+            __DIR__ . '/../Config/front.php' => config_path('front.php'),
         ]);
 
         $this->mergeConfigFrom(
-            __DIR__ . '/../Config/Form.php', 'formsimple'
+            __DIR__ . '/../Config/Form.php', 'Form'
+        );
+        $this->mergeConfigFrom(
+            __DIR__ . '/../Config/front.php', 'front'
         );
     }
 

@@ -52,6 +52,9 @@ class GenAPICommand extends Command
         $this->generate->setPath(base_path());
         $this->generate->excute();
         $this->generate->makeMigration();
+
+        echo "\r\n";
+        $this->line('#########################################');
         $this->line('generate module ' . $namespace . ' success !');
 
     }
