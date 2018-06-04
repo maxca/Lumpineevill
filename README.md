@@ -26,5 +26,20 @@ Lumpineevill\ServiceProvider\LumpineevillServiceProvider::class
 ```
 # Command
 ```php
-php artisan samark:genfile 
+$ php artisan samark:genfile 
+$ php artisan samark:genfront
+```
+# copy environment
+- append `.env` file 
+```php
+$ php samark:copy-env  
+```
+# copy migration file
+- for copy migration file to dastabase/migrations/
+```php
+$ php samark:copy-migration 
+```
+# publishes vendor config 
+```php 
+$ php artisan vendor:publish --provider="Lumpineevill\ServiceProvider\LumpineevillServiceProvider"
 ```
