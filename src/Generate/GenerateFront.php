@@ -28,10 +28,6 @@ class GenerateFront extends GenerateFile
             'resource' => 'TemplateFront/AjaxRequest.php',
             'target' => 'app/Http/Requests/',
         ],
-        'Model' => [
-            'resource' => 'TemplateFront/Model.php',
-            'target' => 'app/Models/',
-        ],
         'Repository' => [
             'resource' => 'TemplateFront/Repository.php',
             'target' => 'app/Repository/',

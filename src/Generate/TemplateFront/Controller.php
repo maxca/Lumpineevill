@@ -113,7 +113,7 @@ class {replace}Controller extends Controller
      * @param  {replace}PostCreateAjaxRequest $request [validate]
      * @return object json
      */
-    public function post{replace}CreateAjax(Create{replace}PostAjaxRequest $request)
+    public function post{replace}CreateAjax(Create{replace}AjaxRequest $request)
     {
         $response = $this->{replace_sm}->createData($request->all());
         return response()->json($response);
@@ -124,7 +124,7 @@ class {replace}Controller extends Controller
      * @param  {replace}PostUpdateAjaxRequest $request [validate]
      * @return object json
      */
-    public function post{replace}UpdateAjax(Update{replace}PostAjaxRequest $request)
+    public function post{replace}UpdateAjax(Update{replace}AjaxRequest $request)
     {
         $response = $this->{replace_sm}->upadateData($request->all());
         return response()->json($response);
@@ -135,7 +135,7 @@ class {replace}Controller extends Controller
      * @param  {replace}PostDeleteAjaxRequest $request [validate]
      * @return object json
      */
-    public function post{replace}DeleteAjax(Delete{replace}PostAjaxRequest $request)
+    public function post{replace}DeleteAjax(Delete{replace}AjaxRequest $request)
     {
         $response = $this->{replace_sm}->deleteData($request->id);
         return response()->json($response);
