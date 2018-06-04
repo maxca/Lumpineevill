@@ -65,7 +65,7 @@ class BaseGenerateFile
     {
         $sql = "SELECT `COLUMN_NAME`
 					FROM `INFORMATION_SCHEMA`.`COLUMNS`
-					WHERE `TABLE_SCHEMA`='tsis'
+					WHERE `TABLE_SCHEMA`='{$this->dbname}'
 					    AND `TABLE_NAME`='{$table}';";
         $data = $this->connect->query($sql);
         if ($data->nun_rows > 0) {

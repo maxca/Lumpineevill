@@ -28,6 +28,12 @@ class GenerateFile implements GenfileInterface
     protected $replaceSnake;
 
     /**
+     * set replace url
+     * @var string
+     */
+    protected $replaceUrl;
+
+    /**
      * set action
      * @var string
      */
@@ -147,6 +153,7 @@ class GenerateFile implements GenfileInterface
         $this->replace = ucfirst($replace);
         $this->replaceSmall = strtolower($replace);
         $this->replaceSnake = self::strCamelCase($replace);
+        $this->replaceUrl = $this->urlGenerate($this->replaceSnake);
     }
 
     /**
@@ -299,6 +306,16 @@ class GenerateFile implements GenfileInterface
     }
 
     /**
+     * [urlGenerate description]
+     * @param  string $input [description]
+     * @return [type]        [description]
+     */
+    protected function urlGenerate($input = '')
+    {
+        return str_replace("_", '-', $input);
+    }
+
+    /**
      * [replaceFile description]
      * @param  string $file [description]
      * @return [type]       [description]
@@ -308,6 +325,7 @@ class GenerateFile implements GenfileInterface
         $file = str_replace(["{replace}"], $this->replace, $file);
         $file = str_replace(["{replace_sm}"], $this->replaceSmall, $file);
         $file = str_replace(["{replace_snc}"], $this->replaceSnake, $file);
+        $file = str_replace(["{replace_url}"], $this->replaceUrl, $file);
         $file = str_replace(["{action}"], $this->action, $file);
         return $file;
     }

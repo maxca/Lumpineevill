@@ -108,4 +108,37 @@ class GenerateFront extends GenerateFile
             file_put_contents(base_path('routes/web.php'), $data . "\r\n", FILE_APPEND);
         }
     }
+    /**
+     * [writeViewBlade description]
+     * @return [type] [description]
+     */
+    public function writeViewBlade()
+    {
+        $dir = __DIR__ . '../TemplateFront/view/';
+        foreach (scandir($dir) as $key => $value) {
+            if (!in_array($value, ['..', '.'])) {
+                $read = file_get_contents($dir . $value);
+                $file = parent::replaceFile($read);
+                $this->putFineOnNewPath($file, $value);
+            }
+        }
+    }
+
+    /**
+     * [putFineOnNewPath description]
+     * @param  [type] $path     [description]
+     * @param  [type] $newFile  [description]
+     * @param  [type] $filename [description]
+     * @return [type]           [description]
+     */
+    public function putFineOnNewPath($newFile, $filename)
+    {
+        $path = base_path() . '/resources/views/' . $this->replace;
+        if (!is_dir($path)) {
+            mkdir($path, 0777, true);
+        }
+        $fullPath = $path . '/' . $filename;
+        file_put_contents($fullPath, $newFile);
+        $this->printline($filename);
+    }
 }
