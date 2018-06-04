@@ -30,12 +30,12 @@ $ php artisan samark:genfile
 $ php artisan samark:genfront
 ```
 # copy environment
-- append `.env` file 
+ append `.env` file 
 ```php
 $ php samark:copy-env  
 ```
 # copy migration file
-- for copy migration file to dastabase/migrations/
+for copy migration file to dastabase/migrations/
 ```php
 $ php samark:copy-migration 
 ```
