@@ -50,6 +50,8 @@ class GenFrontCommand extends Command
         $this->generate = app(GenerateFront::class, ['namespace' => $namespace]);
         $this->generate->setPath(base_path());
         $this->generate->excute();
+        echo "\r\n";
+        $this->line('#########################################');
         $this->line('generate module ' . $namespace . ' success !');
     }
 }

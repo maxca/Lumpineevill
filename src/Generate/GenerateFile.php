@@ -286,7 +286,7 @@ class GenerateFile implements GenfileInterface
     protected function printline($text = '')
     {
         echo "\r\n";
-        echo "write file \e[34m" . $text . " success";
+        echo "Write file \e[44m" . $text . " success \e[49m";
     }
 
     /**
