@@ -1,11 +1,10 @@
 <?php
-
-namespace Lumpineevill\Generate;
-
 /**
  * @author samark chaisanguan
  * @email samarkchsngn@gmail.com
  */
+namespace Lumpineevill\Generate;
+
 class BaseGenerateFile
 {
     /**
@@ -40,7 +39,21 @@ class BaseGenerateFile
 
     public function __construct()
     {
+        $this->runConfig();
         $this->connectDatabase();
+    }
+
+    /**
+     * [runConfig description]
+     * @return [type] [description]
+     */
+    protected function runConfig()
+    {
+        $this->host = env("DB_HOST");
+        $this->port = env("DB_PORT");
+        $this->user = env("DB_USERNAME");
+        $this->pass = env("DB_PASSWORD");
+        $this->dbname = env("DB_DATABASE");
     }
 
     /**

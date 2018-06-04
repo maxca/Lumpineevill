@@ -3,6 +3,7 @@
  * @author samrark@chisanguan
  * @email samarkchsngn@gmail.com
  */
+
 namespace App\Repository\{replace};
 
 use Samark\Front\Repository\BaseRepositoryWrap;

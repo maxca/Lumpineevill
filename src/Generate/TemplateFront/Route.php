@@ -1,3 +1,8 @@
+<?php
+/**
+ * @author samark chaisanguan
+ * @email samarkchsngn@gmail.com
+ */
 
 # {replace} view route group.
 Route::group([
@@ -5,7 +10,7 @@ Route::group([
     'prefix' => '{replace_url}',
     'as' => '{replace_snc}.',
     'middleware' => [
-        'web', 'member',
+        'web',
     ],
 ], function ($router) {
     # get view with blade showing data.

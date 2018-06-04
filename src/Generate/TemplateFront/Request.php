@@ -3,6 +3,7 @@
  * @author samark chaisanguan
  * @email samarkchsngn@gmail.com
  */
+
 namespace App\Http\Requests\{replace};
 
 use Illuminate\Foundation\Http\FormRequest;

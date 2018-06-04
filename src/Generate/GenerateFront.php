@@ -38,7 +38,7 @@ class GenerateFront extends GenerateFile
         ],
         'Route' => [
             'resource' => 'TemplateFront/Route.php',
-            'target' => 'app/Http/Routes/API/',
+            'target' => 'app/Http/Routes/Web/',
         ],
     ];
 
@@ -104,7 +104,7 @@ class GenerateFront extends GenerateFile
         if (file_exists(base_path('routes/web.php'))) {
             $data = "\r\n";
             $data .= "# {$this->replace} \r\n";
-            $data .= "require (app_path(). '/Http/Routes/API/{$this->replace}/{$this->replace}Route.php');";
+            $data .= "require (app_path(). '/Http/Routes/Web/{$this->replace}/{$this->replace}Route.php');";
             file_put_contents(base_path('routes/web.php'), $data . "\r\n", FILE_APPEND);
         }
     }
