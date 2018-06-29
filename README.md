@@ -1,3 +1,4 @@
+<img src="https://travis-ci.org/maxca/Lumpineevill.svg?branch=master" alt="build:passed">
 # Lumpineevill v.1.0.6.*
 For repository patten design under `Laravel framework`
 # Feature 
